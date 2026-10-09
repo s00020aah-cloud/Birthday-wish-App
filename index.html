@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Surprise for Yashfa Malik</title>
+    <!-- Importing Stylish Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-color: #ffe6f0;
+            --main-pink: #ff66a3;
+            --dark-pink: #ff1a75;
+            --light-pink: #fff0f5;
+            --text-color: #800040;
+            --gold-accent: #ffd700;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            /* Decorated Festive Background with Shimmering Gradients */
+            background: linear-gradient(135deg, #ff99cc 0%, #ffc0cb 35%, #ffe6f0 70%, #ffb6c1 100%);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            font-family: 'Poppins', sans-serif;
+            position: relative;
+        }
+
+        /* Animated Birthday Background Decorations (Confetti, Stars, Sparkles) */
+        .bg-decoration {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .party-element {
+            position: absolute;
+            font-size: 1.5rem;
+            opacity: 0.7;
+            animation: floatAround 6s ease-in-out infinite alternate;
+        }
+
+        .element-1 { top: 8%; left: 8%; animation-delay: 0s; }
+        .element-2 { top: 15%; right: 10%; animation-delay: 1s; }
+        .element-3 { bottom: 12%; left: 10%; animation-delay: 2s; }
+        .element-4 { bottom: 18%; right: 8%; animation-delay: 1.5s; }
+        .element-5 { top: 50%; left: 3%; animation-delay: 2.5s; }
+        .element-6 { top: 45%; right: 4%; animation-delay: 0.5s; }
+
+        @keyframes floatAround {
+            0% { transform: translateY(0) rotate(0deg) scale(1); }
+            50% { transform: translateY(-20px) rotate(15deg) scale(1.1); }
+            100% { transform: translateY(10px) rotate(-10deg) scale(0.95); }
+        }
+
+        /* Festive Bunting / Garland Ribbon at Top */
+        .bunting-ribbon {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 25px;
+            background: repeating-linear-gradient(
+                45deg,
+                #ff1a75,
+                #ff1a75 15px,
+                #ffd700 15px,
+                #ffd700 30px,
+                #ff66a3 30px,
+                #ff66a3 45px,
+                #ffffff 45px,
+                #ffffff 60px
+            );
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            z-index: 1;
+        }
+
+        /* Main Container Card */
+        .container {
+            width: 100%;
+            max-width: 480px;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(8px);
+            border: 3px solid rgba(255, 102, 163, 0.4);
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(255, 26, 117, 0.25), 0 0 20px rgba(255, 215, 0, 0.3);
+            padding: 30px 25px;
+            text-align: center;
+            position: relative;
+            min-height: 600px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+            z-index: 2;
+        }
+
+        .screen {
+            display: none;
+            width: 100%;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .screen.active {
+            display: flex;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Stylish Typography */
+        h2 {
+            font-family: 'Great Vibes', cursive;
+            color: var(--dark-pink);
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+            font-weight: normal;
+        }
+
+        h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--dark-pink);
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            color: #660033;
+            font-weight: 400;
+        }
+
+        input[type="password"], input[type="text"] {
+            width: 85%;
+            padding: 14px;
+            border: 2px solid var(--main-pink);
+            border-radius: 12px;
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 15px;
+            outline: none;
+            background: #fff;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+            transition: border-color 0.3s;
+        }
+
+        input[type="password"]:focus {
+            border-color: var(--dark-pink);
+        }
+
+        button {
+            background: linear-gradient(135deg, #ff66a3, #ff1a75);
+            color: white;
+            border: none;
+            padding: 13px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            margin-top: 10px;
+            box-shadow: 0 5px 15px rgba(255, 26, 117, 0.3);
+            letter-spacing: 0.5px;
+        }
+
+        button:hover {
+            background: linear-gradient(135deg, #ff1a75, #e6005c);
+            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 8px 20px rgba(255, 26, 117, 0.4);
+        }
+
+        .error-msg {
+            color: #d90429;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-top: 12px;
+            display: none;
+        }
+
+        /* Calendar Styling */
+        .calendar-card {
+            background: #ffffff;
+            border: 3px solid var(--main-pink);
+            border-radius: 18px;
+            padding: 20px;
+            width: 80%;
+            margin: 20px 0;
+            box-shadow: 0 8px 20px rgba(255, 102, 163, 0.15);
+        }
+
+        .calendar-header {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--dark-pink);
+            border-bottom: 2px dashed var(--main-pink);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .calendar-date {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.8rem;
+            font-weight: bold;
+            color: var(--dark-pink);
+        }
+
+        /* Scratch Card Styling */
+        .scratch-container {
+            position: relative;
+            width: 280px;
+            height: 180px;
+            margin: 20px 0;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            border: 2px solid var(--main-pink);
+        }
+
+        .scratch-reveal {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #ff99c8, #ffccd5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: var(--dark-pink);
+            line-height: 1.5;
+        }
+
+        #scratchCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        /* Balloon Section Styling & Pop Animation */
+        .balloon-grid {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        .balloon {
+            width: 65px;
+            height: 82px;
+            border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1.3rem;
+            box-shadow: inset -6px -6px 12px rgba(0,0,0,0.18), 0 5px 10px rgba(0,0,0,0.1);
+            animation: float 2.5s ease-in-out infinite alternate;
+            transition: transform 0.15s ease-out, opacity 0.15s ease-out;
+        }
+
+        .balloon::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 14px;
+            background-color: #777;
+        }
+
+        /* Pop animation class applied upon click */
+        .balloon.popped {
+            animation: popDisappear 0.2s forwards !important;
+            pointer-events: none;
+        }
+
+        @keyframes popDisappear {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.4) rotate(10deg); opacity: 0.8; }
+            100% { transform: scale(0); opacity: 0; visibility: hidden; }
+        }
+
+        .balloon-1 { background: radial-gradient(circle at 30% 30%, #ff80bf, #ff0066); animation-delay: 0s; }
+        .balloon-2 { background: radial-gradient(circle at 30% 30%, #ff4d94, #cc0052); animation-delay: 0.4s; }
+        .balloon-3 { background: radial-gradient(circle at 30% 30%, #ff99cb, #ff1a8c); animation-delay: 0.8s; }
+        .balloon-4 { background: radial-gradient(circle at 30% 30%, #ff3385, #b30047); animation-delay: 1.2s; }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(-14px); }
+        }
+
+        .balloon-wish {
+            min-height: 65px;
+            background: var(--light-pink);
+            border: 1px solid var(--main-pink);
+            border-radius: 12px;
+            padding: 12px 15px;
+            width: 90%;
+            margin-top: 15px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--dark-pink);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        /* Gift Grid Styling */
+        .gift-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        .gift-box {
+            background: var(--light-pink);
+            border: 2px solid var(--main-pink);
+            border-radius: 15px;
+            padding: 15px;
+            cursor: pointer;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .gift-box:hover {
+            transform: translateY(-3px) scale(1.04);
+            border-color: var(--dark-pink);
+            box-shadow: 0 8px 18px rgba(255, 26, 117, 0.2);
+        }
+
+        .gift-icon {
+            font-size: 2.8rem;
+            margin-bottom: 5px;
+        }
+
+        /* Modal Preview */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.65);
+            backdrop-filter: blur(4px);
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            width: 85%;
+            max-width: 360px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .gift-image-display {
+            width: 100%;
+            height: 200px;
+            border-radius: 12px;
+            object-fit: cover;
+            margin: 12px 0;
+        }
+
+        /* Photo Upload Section */
+        .upload-area {
+            border: 2px dashed var(--main-pink);
+            border-radius: 18px;
+            padding: 20px;
+            background: var(--light-pink);
+            width: 100%;
+            margin: 15px 0;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .upload-area:hover {
+            background: #ffe0eb;
+        }
+
+        .uploaded-photo {
+            width: 100%;
+            max-height: 230px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-top: 12px;
+            display: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        /* Feedback Section */
+        .feedback-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            width: 100%;
+            margin-top: 20px;
+            position: relative;
+            min-height: 80px;
+        }
+
+        #noBtn {
+            position: absolute;
+            transition: 0.15s ease;
+        }
+
+        .final-message {
+            margin-top: 15px;
+            font-size: 1.15rem;
+            font-weight: bold;
+            color: var(--dark-pink);
+            display: none;
+            line-height: 1.5;
+        }
+
+        /* Audio Control Button */
+        .music-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid var(--main-pink);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            font-size: 1.3rem;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+        }
+
+        .music-btn:hover {
+            transform: scale(1.1);
+            background: white;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Background Birthday Decorations -->
+    <div class="bunting-ribbon"></div>
+    <div class="bg-decoration">
+        <div class="party-element element-1">🎈</div>
+        <div class="party-element element-2">✨</div>
+        <div class="party-element element-3">🎉</div>
+        <div class="party-element element-4">💖</div>
+        <div class="party-element element-5">🎁</div>
+        <div class="party-element element-6">🎂</div>
+    </div>
+
+    <div class="container">
+        <button class="music-btn" id="musicToggle" title="Toggle Loud Music">🔊</button>
+
+        <!-- SCREEN 1: Lock Screen -->
+        <div class="screen active" id="screen1">
+            <h2>Birthday Surprise</h2>
+            <p>A birthday surprise for Yashfa Malik from Aleeha Malik</p>
+            <input type="password" id="lockInput" placeholder="Enter Lock Code">
+            <button onclick="checkPassword()">Unlock Surprise</button>
+            <div class="error-msg" id="lockError">Ask Aleeha Malik</div>
+        </div>
+
+        <!-- SCREEN 2: Calendar Page -->
+        <div class="screen" id="screen2">
+            <h2>Special Date Reminder</h2>
+            <div class="calendar-card">
+                <div class="calendar-header">OCTOBER</div>
+                <div class="calendar-date">16</div>
+            </div>
+            <p>Mark this special day on your calendar!</p>
+            <button onclick="nextScreen(3)">Next</button>
+        </div>
+
+        <!-- SCREEN 3: Priority 1 -->
+        <div class="screen" id="screen3">
+            <h2>Always Stay Happy</h2>
+            <p>May your life be filled with boundless smiles, joyful moments, and endless reasons to celebrate every single day.</p>
+            <button onclick="nextScreen(4)">Next</button>
+        </div>
+
+        <!-- SCREEN 4: Priority 2 -->
+        <div class="screen" id="screen4">
+            <h2>Good Health & Success</h2>
+            <p>Wishing you standard achievements in all your pursuits, brilliant physical health, and continuous success in everything you undertake.</p>
+            <button onclick="nextScreen(5)">Next</button>
+        </div>
+
+        <!-- SCREEN 5: Priority 3 -->
+        <div class="screen" id="screen5">
+            <h2>Endless Love & Peace</h2>
+            <p>May you always be surrounded by love, warmth, peace of mind, and genuine people who treasure your kind heart.</p>
+            <button onclick="nextScreen(6)">Next</button>
+        </div>
+
+        <!-- SCREEN 6: Priority 4 -->
+        <div class="screen" id="screen6">
+            <h2>All Dreams Come True</h2>
+            <p>May every desire, vision, and prayer of yours find its path to reality this year and in all the years ahead.</p>
+            <button onclick="nextScreen(7)">Next</button>
+        </div>
+
+        <!-- SCREEN 7: Scratch Card Screen -->
+        <div class="screen" id="screen7">
+            <h2>Scratch Card Surprise</h2>
+            <p>Scratch the surface below to reveal your secret message!</p>
+            <div class="scratch-container">
+                <div class="scratch-reveal">
+                    ✨ Happy Birthday Yashfa Malik! ✨<br>You are completely unique and truly loved!
+                </div>
+                <canvas id="scratchCanvas" width="280" height="180"></canvas>
+            </div>
+            <button onclick="nextScreen(8)">Next</button>
+        </div>
+
+        <!-- SCREEN 8: Balloon Pop Screen -->
+        <div class="screen" id="screen8">
+            <h2>Pop The Birthday Balloons</h2>
+            <p>Click each balloon to pop it and reveal your special prayer!</p>
+            <div class="balloon-grid">
+                <div class="balloon balloon-1" onclick="popBalloon(1, 'May Allah bless you with a long, healthy, and prosperous life!')">🎈</div>
+                <div class="balloon balloon-2" onclick="popBalloon(2, 'May your heart always remain pure and filled with eternal happiness!')">🎈</div>
+                <div class="balloon balloon-3" onclick="popBalloon(3, 'May success attend your every step wherever life takes you!')">🎈</div>
+                <div class="balloon balloon-4" onclick="popBalloon(4, 'May you achieve every single goal you set your eyes upon!')">🎈</div>
+            </div>
+            <div class="balloon-wish" id="balloonWishText">Pop a balloon to see the blessing...</div>
+            <button onclick="nextScreen(9)">Next</button>
+        </div>
+
+        <!-- SCREEN 9: Gift Boxes Screen -->
+        <div class="screen" id="screen9">
+            <h2>Choose Your Birthday Gifts</h2>
+            <p>Click on any box to open and unveil your special gift!</p>
+            <div class="gift-grid">
+                <div class="gift-box" onclick="openGift('Beautiful Designer Dress', 'https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=400&q=80')">
+                    <div class="gift-icon">🎁</div>
+                    <div>Gift 1</div>
+                </div>
+                <div class="gift-box" onclick="openGift('Luxury Wrist Watch', 'https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=400&q=80')">
+                    <div class="gift-icon">🎁</div>
+                    <div>Gift 2</div>
+                </div>
+                <div class="gift-box" onclick="openGift('Elegant Jewelry Set', 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=400&q=80')">
+                    <div class="gift-icon">🎁</div>
+                    <div>Gift 3</div>
+                </div>
+                <div class="gift-box" onclick="openGift('Premium Chocolates Box', 'https://images.unsplash.com/photo-1549007994-cb92caebd54b?auto=format&fit=crop&w=400&q=80')">
+                    <div class="gift-icon">🎁</div>
+                    <div>Gift 4</div>
+                </div>
+            </div>
+            <button onclick="nextScreen(10)">Next</button>
+        </div>
+
+        <!-- SCREEN 10: Gallery Photo Upload -->
+        <div class="screen" id="screen10">
+            <h2>Upload Birthday Photo</h2>
+            <p>Select and upload a special photo from your device gallery!</p>
+            <div class="upload-area" onclick="document.getElementById('photoInput').click()">
+                <span>📷 Click here to select & upload a picture</span>
+                <input type="file" id="photoInput" accept="image/*" style="display:none;" onchange="handleImageUpload(event)">
+                <img id="uploadedPreview" class="uploaded-photo" alt="Uploaded Preview">
+            </div>
+            <button onclick="nextScreen(11)">Next</button>
+        </div>
+
+        <!-- SCREEN 11: Feedback Screen -->
+        <div class="screen" id="screen11">
+            <h2>Did You Like This Surprise?</h2>
+            <div class="feedback-buttons">
+                <button id="yesBtn" onclick="handleYesClick()">Yes 😊</button>
+                <button id="noBtn" onmouseover="moveNoButton()" onclick="moveNoButton()">No 😢</button>
+            </div>
+            <div class="final-message" id="finalResponse">
+                Thank you Aleeha Malik for this surprise, I really liked it!
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Modal for displaying gifts -->
+    <div class="modal" id="giftModal">
+        <div class="modal-content">
+            <h3 id="modalTitle">Gift Title</h3>
+            <img id="modalImage" class="gift-image-display" src="" alt="Gift Image">
+            <button onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // Audio Synthesizers and Voice Speech Synthesis
+        let audioCtx = null;
+        let isMusicPlaying = false;
+        let musicTimeout = null;
+
+        function initAudio() {
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+        }
+
+        // Realistic Bursting Pop Sound Effect
+        function playPopSound() {
+            initAudio();
+            const now = audioCtx.currentTime;
+            
+            const bufferSize = audioCtx.sampleRate * 0.08;
+            const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+            const data = buffer.getChannelData(0);
+            for (let i = 0; i < bufferSize; i++) {
+                data[i] = Math.random() * 2 - 1;
+            }
+
+            const noise = audioCtx.createBufferSource();
+            noise.buffer = buffer;
+
+            const filter = audioCtx.createBiquadFilter();
+            filter.type = 'lowpass';
+            filter.frequency.setValueAtTime(1000, now);
+            filter.frequency.exponentialRampToValueAtTime(100, now + 0.08);
+
+            const gain = audioCtx.createGain();
+            gain.gain.setValueAtTime(1.5, now);
+            gain.gain.exponentialRampToValueAtTime(0.01, now + 0.08);
+
+            noise.connect(filter);
+            filter.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            noise.start(now);
+        }
+
+        // Voice Speech Announcement Function
+        function speakBirthdayWish() {
+            if ('speechSynthesis' in window) {
+                window.speechSynthesis.cancel(); // Reset previous speech if active
+                const utterance = new SpeechSynthesisUtterance("Happy Birthday to you Yashfa Malik!");
+                utterance.pitch = 1.2;
+                utterance.rate = 0.95;
+                utterance.volume = 1.0;
+                window.speechSynthesis.speak(utterance);
+            }
+        }
+
+        // Play Individual Note for Melody
+        function playTone(freq, duration) {
+            if (!isMusicPlaying || !audioCtx) return;
+            const now = audioCtx.currentTime;
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            
+            osc.type = 'triangle';
+            osc.frequency.setValueAtTime(freq, now);
+            
+            gain.gain.setValueAtTime(0.3, now);
+            gain.gain.exponentialRampToValueAtTime(0.001, now + duration);
+            
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            
+            osc.start(now);
+            osc.stop(now + duration);
+        }
+
+        // Musical Tune Sequence
+        const happyBirthdaySong = [
+            { note: 261.63, duration: 0.35, pause: 400 },
+            { note: 261.63, duration: 0.35, pause: 400 },
+            { note: 293.66, duration: 0.6,  pause: 650 },
+            { note: 261.63, duration: 0.6,  pause: 650 },
+            { note: 349.23, duration: 0.6,  pause: 650 },
+            { note: 329.63, duration: 0.9,  pause: 950 },
+
+            { note: 261.63, duration: 0.35, pause: 400 },
+            { note: 261.63, duration: 0.35, pause: 400 },
+            { note: 293.66, duration: 0.6,  pause: 650 },
+            { note: 261.63, duration: 0.6,  pause: 650 },
+            { note: 392.00, duration: 0.6,  pause: 650 },
+            { note: 349.23, duration: 0.9,  pause: 950 },
+
+            { note: 261.63, duration: 0.35, pause: 400 },
+            { note: 261.63, duration: 0.35, pause: 400 },
+            { note: 523.25, duration: 0.6,  pause: 650 },
+            { note: 440.00, duration: 0.6,  pause: 650 },
+            { note: 349.23, duration: 0.6,  pause: 650 },
+            { note: 329.63, duration: 0.6,  pause: 650 },
+            { note: 293.66, duration: 0.9,  pause: 950 }
+        ];
+
+        let currentNoteIndex = 0;
+
+        function playBirthdayMelody() {
+            if (!isMusicPlaying) return;
+
+            // Trigger Voice Announcement at the start of each cycle
+            if (currentNoteIndex === 0) {
+                speakBirthdayWish();
+            }
+
+            const current = happyBirthdaySong[currentNoteIndex];
+            playTone(current.note, current.duration);
+
+            currentNoteIndex = (currentNoteIndex + 1) % happyBirthdaySong.length;
+            musicTimeout = setTimeout(playBirthdayMelody, current.pause);
+        }
+
+        function startLoudMusic() {
+            initAudio();
+            if (isMusicPlaying) return;
+            isMusicPlaying = true;
+            document.getElementById('musicToggle').innerText = '🔊';
+            currentNoteIndex = 0;
+            playBirthdayMelody();
+        }
+
+        function toggleMusic() {
+            if (isMusicPlaying) {
+                isMusicPlaying = false;
+                clearTimeout(musicTimeout);
+                if ('speechSynthesis' in window) window.speechSynthesis.cancel();
+                document.getElementById('musicToggle').innerText = '🔇';
+            } else {
+                startLoudMusic();
+            }
+        }
+
+        document.getElementById('musicToggle').addEventListener('click', toggleMusic);
+
+        // Screen Navigation Logic
+        function nextScreen(screenNumber) {
+            document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+            document.getElementById('screen' + screenNumber).classList.add('active');
+            if (screenNumber === 7) {
+                initScratchCard();
+            }
+        }
+
+        // Lock Screen Validation
+        function checkPassword() {
+            startLoudMusic();
+            const input = document.getElementById('lockInput').value;
+            const errorMsg = document.getElementById('lockError');
+            if (input === '1782') {
+                errorMsg.style.display = 'none';
+                nextScreen(2);
+            } else {
+                errorMsg.style.display = 'block';
+            }
+        }
+
+        // Canvas Scratch Card Implementation
+        function initScratchCard() {
+            const canvas = document.getElementById('scratchCanvas');
+            const ctx = canvas.getContext('2d');
+            ctx.fillStyle = '#c0c0c0';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            ctx.fillStyle = '#555555';
+            ctx.font = '16px Poppins';
+            ctx.textAlign = 'center';
+            ctx.fillText('Scratch Here with Mouse / Touch', canvas.width / 2, canvas.height / 2);
+
+            let isDrawing = false;
+
+            function scratch(e) {
+                if (!isDrawing) return;
+                const rect = canvas.getBoundingClientRect();
+                const x = (e.clientX || e.touches[0].clientX) - rect.left;
+                const y = (e.clientY || e.touches[0].clientY) - rect.top;
+                
+                ctx.globalCompositeOperation = 'destination-out';
+                ctx.beginPath();
+                ctx.arc(x, y, 18, 0, Math.PI * 2);
+                ctx.fill();
+            }
+
+            canvas.addEventListener('mousedown', (e) => { isDrawing = true; scratch(e); });
+            canvas.addEventListener('mousemove', scratch);
+            canvas.addEventListener('mouseup', () => isDrawing = false);
+            canvas.addEventListener('touchstart', (e) => { isDrawing = true; scratch(e); });
+            canvas.addEventListener('touchmove', scratch);
+            canvas.addEventListener('touchend', () => isDrawing = false);
+        }
+
+        // Balloon Pop Action with Burst Animation & Pop Sound
+        function popBalloon(id, blessing) {
+            playPopSound();
+            const balloon = document.querySelectorAll('.balloon')[id - 1];
+            balloon.classList.add('popped');
+            document.getElementById('balloonWishText').innerText = blessing;
+        }
+
+        // Gift Modal Handling
+        function openGift(title, imageSrc) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalImage').src = imageSrc;
+            document.getElementById('giftModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('giftModal').style.display = 'none';
+        }
+
+        // Photo Upload Handler
+        function handleImageUpload(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = document.getElementById('uploadedPreview');
+                    img.src = e.target.result;
+                    img.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // Evasive 'No' Button Logic
+        function moveNoButton() {
+            const btn = document.getElementById('noBtn');
+            const container = document.querySelector('.feedback-buttons');
+            const maxX = container.clientWidth - btn.clientWidth;
+            const maxY = container.clientHeight - btn.clientHeight;
+            
+            const randomX = Math.floor(Math.random() * (maxX + 100)) - 50;
+            const randomY = Math.floor(Math.random() * (maxY + 100)) - 50;
+            
+            btn.style.left = randomX + 'px';
+            btn.style.top = randomY + 'px';
+        }
+
+        // Handle 'Yes' Click Response
+        function handleYesClick() {
+            document.getElementById('finalResponse').style.display = 'block';
+            document.getElementById('noBtn').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
